@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="noteAll">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="style/myStyle.css">
+
+<body>
+<script src= " js/myApp.js" ></script>
+<div class="text-center"><h1>Note Your details </h1>
+</div>
+
+<div  ng-controller="listCtrl" class=" jumbotron text-center" >
+<input type="text" name="search" placeholder="Search..."  ng-model ="search"> <button  type="submit" class="fa fa-search"></button>
+
+<br>
+<br>
+
+  <ul class="nav nav-pills nav-stacked">
+    <li ng-repeat="x in products | filter:search" class ="sample-show-hide">{{x}} <span ng-click ="removeItem(1)" class="close" aria-label = "close">&times;</span></li>
+  </ul>
+<br>
+  What you want to Note  ?<input type="text2" ng-model="addMe"  />
+  <button ng-click ="addItems()" class="btn btn-info"> Note  It  </button> <span class="alert alert-danger">{{errortext}}</span>
+
+
+</div>
+
+
+</body>
+</html>
